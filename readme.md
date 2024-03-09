@@ -142,5 +142,3 @@ The application provides the following API endpoints for various functionalities
         # PORT
         PORT
 
-## Page is live at: 
-        [text](https://dot-blog-3.onrender.com/)
