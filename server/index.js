@@ -20,7 +20,7 @@ dotenv.config();
 const PORT = process.env.PORT ;
 
 //set dirname
-const __dirname = path.resolve();
+__dirname = path.resolve();
 
 // Connecting to database
 dbConnect();
