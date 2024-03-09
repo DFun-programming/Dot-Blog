@@ -17,7 +17,7 @@ import { createPost } from '../services/operations/postOperation';
 import { categories } from '../assets/data/categories';
 
 
-export default function CreateBlog() {
+export default function CreatePost() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);

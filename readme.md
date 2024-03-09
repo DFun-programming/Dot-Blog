@@ -1,6 +1,6 @@
 # Blog Application
 
-This is a web application built using Vite for React. It serves as a platform for users to create, view, and interact with blog posts. Users can sign up, log in, create posts, comment on posts, like comments, and perform various other actions related to managing their profile and interacting with content.
+This is a Responsive web application built using Vite for React. It serves as a platform for users to create, view, and interact with blog posts. Users can sign up, log in, create posts, comment on posts, like comments, and perform various other actions related to managing their profile and interacting with content.
 
 ## Features
 
@@ -17,6 +17,8 @@ This is a web application built using Vite for React. It serves as a platform fo
 - **Node.js**: A JavaScript runtime environment that executes JavaScript code outside of a web browser.
 - **Express.js**: A web application framework for Node.js used for building server-side applications.
 - **MongoDB**: A NoSQL database used for storing application data, such as user profiles, posts, and comments.
+- **TailwindCss** : A Css Library to style the components
+- **Flowbite UI Library** : A tailwind css library 
 
 ## Installation
 
@@ -87,7 +89,7 @@ The Comment model represents a comment on a blog post within the application. It
 
     **Indexing**
         1.Index on post field for efficient retrieval of comments associated with a particular post.
-        2.Index on user field for faster retrieval of comments created by a specific user.
+        2.Index on user field for faster retrieval of comments created by a specific user.(this is for admin only and for future implementation)
 
 ## API Endpoints
 The application provides the following API endpoints for various functionalities:

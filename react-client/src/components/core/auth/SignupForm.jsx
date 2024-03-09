@@ -46,14 +46,14 @@ function SignupForm() {
       const resp =  dispatch(signUp(username , firstName, lastName, email, password, confirmPassword,navigate));
       console.log(resp)
     // Reset
-    // setFormData({
-    //   username:"",
-    //   firstName: "",
-    //   lastName: "",
-    //   email: "",
-    //   password: "",
-    //   confirmPassword: "",
-    // })
+    setFormData({
+      username:"",
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    })
 
   }
 
@@ -63,8 +63,8 @@ function SignupForm() {
       <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4">
         <div className="flex gap-x-4">
           <label>
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-              username<sup className="text-pink-200">*</sup>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-700">
+              Username<sup className="text-rose-800">*</sup>
             </p>
             <input
               required
@@ -73,12 +73,12 @@ function SignupForm() {
               value={username}
               onChange={handleOnChange}
               placeholder="Enter username"
-              className="form-style w-full"
+              className="form-style w-full outline-none rounded-lg border-2 border-gradient-green-to-blue"
             />
           </label>
           <label>
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-              First Name <sup className="text-pink-200">*</sup>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-700">
+              First Name <sup className="text-rose-800">*</sup>
             </p>
             <input
               required
@@ -87,12 +87,12 @@ function SignupForm() {
               value={firstName}
               onChange={handleOnChange}
               placeholder="Enter first name"
-              className="form-style w-full"
+              className="form-style w-full outline-none rounded-lg border-2 border-gradient-green-to-blue"
             />
           </label>
           <label>
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-              Last Name <sup className="text-pink-200">*</sup>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-700">
+              Last Name <sup className="text-rose-800">*</sup>
             </p>
             <input
               required
@@ -101,13 +101,13 @@ function SignupForm() {
               value={lastName}
               onChange={handleOnChange}
               placeholder="Enter last name"
-              className="form-style w-full"
+              className="form-style w-full outline-none rounded-lg border-2 border-gradient-green-to-blue"
             />
           </label>
         </div>
         <label className="w-full">
-          <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-            Email Address <sup className="text-pink-200">*</sup>
+          <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-700">
+            Email Address <sup className="text-rose-800">*</sup>
           </p>
           <input
             required
@@ -116,13 +116,13 @@ function SignupForm() {
             value={email}
             onChange={handleOnChange}
             placeholder="Enter email address"
-            className="form-style w-full"
+            className="form-style w-full outline-none rounded-lg border-2 border-gradient-green-to-blue"
           />
         </label>
         <div className="flex gap-x-4">
           <label className="relative">
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-              Create Password <sup className="text-pink-200">*</sup>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-700">
+              Create Password <sup className="text-rose-800">*</sup>
             </p>
             <input
               required
@@ -131,7 +131,7 @@ function SignupForm() {
               value={password}
               onChange={handleOnChange}
               placeholder="Enter Password"
-              className="form-style w-full !pr-10"
+              className="form-style w-full !pr-10 outline-none rounded-lg border-2 border-gradient-green-to-blue"
             />
             <span
               onClick={() => setShowPassword((prev) => !prev)}
@@ -145,8 +145,8 @@ function SignupForm() {
             </span>
           </label>
           <label className="relative">
-            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
-              Confirm Password <sup className="text-pink-200">*</sup>
+            <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-slate-700">
+              Confirm Password <sup className="text-rose-800">*</sup>
             </p>
             <input
               required
@@ -155,11 +155,12 @@ function SignupForm() {
               value={confirmPassword}
               onChange={handleOnChange}
               placeholder="Confirm Password"
-              className="form-style w-full !pr-10"
-            />
+              className="form-style w-full !pr-10 outline-none rounded-lg border-2 border-gradient-green-to-blue" 
+
+              />
             <span
               onClick={() => setShowConfirmPassword((prev) => !prev)}
-              className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+              className="absolute right-3 top-[38px] z-[10] cursor-pointer "
             >
               {showConfirmPassword ? (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />

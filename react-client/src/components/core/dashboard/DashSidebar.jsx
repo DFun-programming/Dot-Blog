@@ -21,6 +21,7 @@ export default function DashSidebar() {
   const { currentUser } = useSelector((state) => state.user);
   const [tab, setTab] = useState('');
   useEffect(() => {
+    //To Check what tab has to be rendered
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get('tab');
     if (tabFromUrl) {
@@ -37,7 +38,7 @@ export default function DashSidebar() {
   };
   return (
     <>
-    <div className="flex md:h-[calc(100vh-3.5rem)] sm:h-fit min-w-[220px] flex-col border-r-[1px] border-r-blue-100 bg-blue-50 py-10">
+    <div className="flex md:h-[calc(100vh-3.5rem)] sm:h-fit min-w-[220px]  flex-col border-r-[1px] border-r-blue-100 bg-gradient-to-tr from-blue-300/50 via-white to-green-300/35 py-10">
       <div className="flex flex-col">
         {sidebarLinks.map((link) => {
           if (link.type && user?.accountType !== link.type) return null
@@ -46,7 +47,7 @@ export default function DashSidebar() {
           )
         })}
       </div>
-      <div className="mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-richblack-700" />
+      <div className="mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-cyan-700" />
       <div className="flex flex-col">
         <button
           onClick={() =>

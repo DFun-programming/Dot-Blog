@@ -7,73 +7,73 @@ import {
 } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
+import { categories } from "../../assets/data/categories";
 
-// import { images } from "../constants";
 
 const Footer = () => {
   return (
-    <section className="bg-gradient-to-tr from-blue-300/50 via-white to-green-300/35">
+    <section className="bg-gradient-to-tr from-blue-300/50 via-white to-green-300/35 mt-4">
       <footer className="container mx-auto grid grid-cols-10 px-5 py-10 gap-y-10 gap-x-5 md:pt-20 md:grid-cols-12 lg:grid-cols-10 lg:gap-x-10">
       
         <div className="col-span-5 md:col-span-4 lg:col-span-2">
-          <h3 className="text-slate-800 font-bold md:text-lg">Services</h3>
+          <h3 className="text-slate-800 font-bold md:text-lg">Explore</h3>
           <ul className="text-slate-600 text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">Documentation</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="/">Design</a>
+              <a href="/search">Blog</a>
             </li>
             <li>
-              <a href="/">Themes</a>
+              <a href="/search">Categories</a>
             </li>
             <li>
-              <a href="/">Illustrations</a>
+              <a href="/about">About</a>
             </li>
             <li>
-              <a href="/">UI Kit</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </div>
+        <div className="col-span-5 md:col-span-4 lg:col-span-2">
+          <h3 className="text-slate-800 font-bold md:text-lg">Popular Tags</h3>
+          <ul className="text-slate-600 text-sm mt-5 space-y-4 md:text-base">
+           {
+            categories.slice(2,8).map((category)=>(
+              <li key={category.id}><a href={`/search?category=${category.title.toLowerCase()}`}>{category.title}</a></li>
+
+            ))
+           }
+          </ul>
+        </div>
         <div className="col-span-5 md:col-span-4 md:col-start-5 lg:col-start-auto lg:col-span-2">
-        <h3 className="text-slate-800 font-bold md:text-lg">Services</h3>
+        <h3 className="text-slate-800 font-bold md:text-lg">Legal</h3>
           <ul className="text-slate-600 text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Terms</a>
+              <a href="/">Terms of Service</a>
             </li>
             <li>
               <a href="/">Privacy Policy</a>
             </li>
-            <li>
-              <a href="/">Careers</a>
-            </li>
           </ul>
         </div>
         <div className="col-span-5 md:col-span-4 lg:col-span-2">
-        <h3 className="text-slate-800 font-bold md:text-lg">Services</h3>
+        <h3 className="text-slate-800 font-bold md:text-lg">Connect</h3>
           <ul className="text-slate-600 text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">Documentation</a>
+              <a href="/">Twitter</a>
             </li>
             <li>
-              <a href="/">License</a>
+              <a href="/">Facebook</a>
             </li>
             <li>
-              <a href="/">Changelog</a>
+              <a href="/">Instagram</a>
             </li>
           </ul>
         </div>
         <div className="col-span-10 md:order-first md:col-span-4 lg:col-span-2">
-          {/* <img
-            src={images.Logo}
-            alt="logo"
-            className="brightness-0 invert mx-auto md:mx-0"
-          /> */}
           <p className="text-sm text-dark-light text-center mt-4 md:text-left md:text-base lg:text-sm">
-            Build a modern and creative website with crealand
+            Stay up-to-date with our latest blog posts and news.
           </p>
           <ul className="flex justify-center items-center mt-5 space-x-4 text-gray-300 md:justify-start">
             <li>
@@ -108,7 +108,7 @@ const Footer = () => {
             <AiFillHeart className="w-7 h-auto" />
           </div>
           <p className="font-bold italic text-dark-light">
-            Copyright © 2023. Crafted with love.
+            © {new Date().getFullYear()} <span className="font-extrabold bg-gradient-to-b from-indigo-800 via-purple-700 to-rose-700 text-transparent bg-clip-text"> DOT </span>Blog. All rights reserved.
           </p>
         </div>
       </footer>

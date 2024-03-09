@@ -9,7 +9,7 @@ import './App.css'
 import Footer from './components/common/Footer'
 import PrivateRoute from './components/core/auth/PrivateRoute'
 import Dashboard from './pages/Dashboard'
-import CreateBlog from './pages/CreateBlog'
+import CreatePost from './pages/CreatePost'
 import UpdatePost from './pages/UpdatePost'
 import PostPage from './pages/PostPage'
 import ScrollToTop from './components/common/ScrollToTop'
@@ -30,7 +30,7 @@ function App() {
         {/**Private Route for only logged in users */}
         <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}></Route>
         {/**Private Route for only logged in users */}
-        <Route path='/create-post' element={<PrivateRoute><CreateBlog></CreateBlog></PrivateRoute>}></Route>
+        <Route path='/create-post' element={<PrivateRoute><CreatePost></CreatePost></PrivateRoute>}></Route>
         <Route path='/update-post/:postId' element={<PrivateRoute><UpdatePost></UpdatePost></PrivateRoute>}></Route>
         <Route path='/post/:postSlug' element={<PostPage></PostPage>}></Route>
         <Route path='/search' element={<Search  />} />

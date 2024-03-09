@@ -23,40 +23,51 @@ export default function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Extracting search parameters from the current URL
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
     const sortFromUrl = urlParams.get('sort');
     const categoryFromUrl = urlParams.get('category');
+
+    // Updating the sidebar data state if any of the parameters are present in the URL
     if (searchTermFromUrl || sortFromUrl || categoryFromUrl) {
       setSidebarData({
-        ...sidebarData,
+        ...sidebarData, // Preserve existing sidebar data
         searchTerm: searchTermFromUrl,
         sort: sortFromUrl,
         category: categoryFromUrl,
       });
     }
 
+    // Asynchronously fetching posts based on the search parameters
     const fetchPosts = async () => {
-      setLoading(true);
-      const searchQuery = urlParams.toString();
-      const res = await getPostBySearchParam(searchQuery);
+      setLoading(true); // Indicates that a fetch operation is in progress
+      const searchQuery = urlParams.toString(); // Constructing the search query string
+      const res = await getPostBySearchParam(searchQuery); // Fetching posts using the constructed query
+      
+      // Handling the response from the fetch operation
       if (!res.success) {
-        setLoading(false);
-        return;
+        setLoading(false); // Reset loading state if the fetch was unsuccessful
+        return; // Exit early if there was an error
       }
       if (res.success) {
-  
+        // Updating the posts state with the fetched posts
         setPosts(res.posts);
-        setLoading(false);
+        setLoading(false); // Reset loading state as the fetch operation is complete
+        
+        // Determining whether to display the "Show More" button based on the number of fetched posts
         if (res.posts.length === 9) {
-          setShowMore(true);
+          setShowMore(true); // Display the "Show More" button if there are more than 9 posts
         } else {
-          setShowMore(false);
+          setShowMore(false); // Hide the "Show More" button if there are 9 or fewer posts
         }
       }
     };
-    fetchPosts();
-  }, [location.search]);
+
+    fetchPosts(); // Initiating the post-fetching process
+
+  }, [location.search]); // Re-run this effect whenever the location.search parameter changes
+
 
   const handleChange = (e) => {
     setSidebarData((prev)=>(
@@ -78,24 +89,36 @@ export default function Search() {
   };
 
   const handleShowMore = async () => {
+    // Determine the number of posts currently fetched
     const numberOfPosts = posts.length;
+
+    // Calculate the starting index for the next set of posts to fetch
     const startIndex = numberOfPosts;
+
+    // Construct the URL search parameters with the updated starting index
     const urlParams = new URLSearchParams(location.search);
     urlParams.set('startIndex', startIndex);
     const searchQuery = urlParams.toString();
+
+    // Fetch posts based on the updated search query
     const res = await getPostBySearchParam(searchQuery);
+
+    // Handle fetch response
     if (!res.success) {
-      return;
+      return; // Exit early if the fetch was unsuccessful
     }
     if (res.success) {
-       setPosts([...posts, ...res.posts]);
+      // Update the posts state with the newly fetched posts
+      setPosts([...posts, ...res.posts]);
+
+      // Determine whether to display the "Show More" button based on the number of newly fetched posts
       if (res.posts.length === 9) {
-        setShowMore(true);
+        setShowMore(true); // Display the "Show More" button if there are more posts to fetch
       } else {
-        setShowMore(false);
+        setShowMore(false); // Hide the "Show More" button if there are no more posts to fetch
       }
     }
-  };
+};
 
   return (
     <div className='flex flex-col md:flex-row'>

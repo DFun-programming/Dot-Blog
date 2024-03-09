@@ -1,6 +1,7 @@
 import React from 'react'
-import PostCard from '../../../../../../mern-blog/client/src/components/PostCard'
+
 import { Link } from 'react-router-dom'
+import PostCard from '../postPage/PostCard'
 
 const Article = ({posts ,showMore,handleShowMore}) => {
   return (
