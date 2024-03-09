@@ -1,6 +1,4 @@
 // Define the base URL for the API
-// https://dot-blog-3.onrender.com/api/v1
-
 const BASE_URL = "api/v1";
 
 // Define authentication endpoints
