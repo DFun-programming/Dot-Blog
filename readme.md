@@ -87,7 +87,7 @@ The Comment model represents a comment on a blog post within the application. It
 
     **Indexing**
         1.Index on post field for efficient retrieval of comments associated with a particular post.
-    2.Index on user field for faster retrieval of comments created by a specific user.
+        2.Index on user field for faster retrieval of comments created by a specific user.
 
 ## API Endpoints
 The application provides the following API endpoints for various functionalities:
@@ -117,9 +117,15 @@ The application provides the following API endpoints for various functionalities
         #Delete User - **DELETE**: /api/v1/user/delete/:userId
 
 ## Middleware: 
-    **isAuth**: This middleware function is responsible for authenticating requests using JSON Web Tokens (JWT). 
-    It extracts the JWT from the request header, verifies its validity using the secret key stored in environment variables, 
-    and stores the decoded payload in the request object for further use.
+    **isAuth**: 
+        
+        This middleware function is responsible for authenticating requests using JSON Web Tokens (JWT). 
+        It extracts the JWT from the request header, verifies its validity using the secret key stored in environment variables, 
+        and stores the decoded payload in the request object for further use.
+
+    **isError**:
+
+        to handle error effectively and write a clean code
 
 ## environment variables
 **For Client**:
