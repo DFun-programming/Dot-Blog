@@ -31,14 +31,14 @@ export default function UpdatePost() {
 
   const navigate = useNavigate();
   const { currentUser, token } = useSelector((state) => state.user);
-  const { currentPost } = useSelector((state) => state.post);
+
   const [formData, setFormData] = useState({});
   const dispatch = useDispatch();
 
   useEffect(() => {
     try {
       (async () => {
-        if (!currentPost) {
+      
           const res = await getPostById(postId);
           if (!res.success) {
             console.log(res.message);
@@ -49,10 +49,8 @@ export default function UpdatePost() {
             setPublishError(null);
             setFormData({...res.posts[0]});
           }
-        }
-        else{
-          setFormData({...currentPost})
-        }
+        
+       
       })();
     } catch (error) {
       console.log(error.message);
