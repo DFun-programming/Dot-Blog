@@ -9,7 +9,7 @@ This is a Responsive web application built using Vite for React. It serves as a 
 - **Commenting System**: Users can comment on posts and interact with other users' comments by liking or deleting them.
 - **User Profile Management**: Users can update their profile information and delete their account if needed.
 - **Error Handling**: The application includes error handling mechanisms to provide a smooth user experience.
-
+- **Pagination**: 9 posts will be rendered at a time, you have to load more to get more
 ## Technologies Used
 
 - **Vite**: A build tool that provides a fast and optimized development experience for React applications.
@@ -141,3 +141,6 @@ The application provides the following API endpoints for various functionalities
         JWT_SECRET
         # PORT
         PORT
+
+## Page is live at: 
+        [text](https://dot-blog-3.onrender.com/)
