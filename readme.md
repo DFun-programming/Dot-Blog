@@ -1,5 +1,5 @@
 # Blog Application
-
+(## DOT Blog)[https://upload-blog-cxbp.onrender.com]
 This is a Responsive web application built using Vite for React. It serves as a platform for users to create, view, and interact with blog posts. Users can sign up, log in, create posts, comment on posts, like comments, and perform various other actions related to managing their profile and interacting with content.
  
 ## Features
@@ -141,4 +141,6 @@ The application provides the following API endpoints for various functionalities
         JWT_SECRET
         # PORT
         PORT
+## project is live at : (Dot Blog)[https://upload-blog-cxbp.onrender.com]
+
 
